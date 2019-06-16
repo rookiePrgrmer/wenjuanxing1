@@ -1,0 +1,66 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    height: 100%;
+
+    .wrapper {
+        display: flex;
+        height: 100%;
+        font-size: 0;
+    
+        #container {
+            position: relative;
+            flex: 1;
+            padding: 10px;
+            font-size: 18px;
+
+            &.drop-activated {
+                background: rgb(211, 215, 212);
+            }
+        }
+    
+        #templates {
+            flex: 1;
+            padding: 10px;
+            font-size: 18px;
+        }
+    }
+}
+
+.draggable {
+    touch-action: none;
+    user-select: none;
+}
+
+.square {
+    border: 1px solid black;
+    border-radius: 5.5px;
+    text-align: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    &:last-child {
+        margin: 0;
+    }
+
+    &:hover {
+        background: black;
+        color: white;
+    }
+}
+
+.line-right {
+    &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        border-left: 1px dashed grey;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
